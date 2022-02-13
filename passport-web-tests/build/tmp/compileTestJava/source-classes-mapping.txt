@@ -1,0 +1,10 @@
+ru/stqa/pft/passport/pages/MainPage.java
+ ru.stqa.pft.passport.pages.MainPage
+ru/stqa/pft/passport/pages/LoginPage.java
+ ru.stqa.pft.passport.pages.LoginPage
+ru/stqa/pft/passport/testData/PassportTestData.java
+ ru.stqa.pft.passport.testData.PassportTestData
+ru/stqa/pft/passport/steps/CommonSteps.java
+ ru.stqa.pft.passport.steps.CommonSteps
+ru/stqa/pft/passport/tests/LoginEnterTest.java
+ ru.stqa.pft.passport.tests.LoginEnterTest
