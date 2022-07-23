@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.5'
+    implementation 'org.testng:testng:7.1.0'
 }
 
 test {
