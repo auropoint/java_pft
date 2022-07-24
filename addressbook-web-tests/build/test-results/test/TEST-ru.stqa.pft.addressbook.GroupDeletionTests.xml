@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-24T08:43:20" hostname="T15" time="0.523">
+  <properties/>
+  <testcase name="testGroupDeletion" classname="ru.stqa.pft.addressbook.GroupDeletionTests" time="0.523"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1658652197323	geckodriver	INFO	Listening on 127.0.0.1:62588
+1658652197612	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "56358" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://localhost:56358/" "-no-remote" "-profile" "C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofileC2JhgM"
+1658652197950	Marionette	INFO	Marionette enabled
+1658652197955	Marionette	INFO	Listening on port 57910
+WebDriver BiDi listening on ws://localhost:56358
+Read port: 57910
+1658652198211	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofileC2JhgM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56358/devtools/browser/4cb4911f-eaff-4402-ad44-645d7d2f4df8
+Jul 24, 2022 11:43:19 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property "getRecipesForHost", gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property "getRecipesForHost", gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property "getRecipesForHost", gRecipeManager is null
+1658652200949	Marionette	INFO	Stopped listening on port 57910
+]]></system-err>
+</testsuite>
