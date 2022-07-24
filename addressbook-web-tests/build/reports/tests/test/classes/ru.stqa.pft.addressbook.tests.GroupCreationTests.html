@@ -23,25 +23,25 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.071s</div>
+<div class="counter">1.173s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,102 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="setUp"></a>
-<h3 class="failures">setUp</h3>
-<span class="code">
-<pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
-Build info: version: '4.2.2', revision: '683ccb65d6'
-System info: host: 'T15', ip: '192.168.1.180', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:588)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:283)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:184)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:126)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:114)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:94)
-	at ru.stqa.pft.addressbook.appmanager.ApplicationManager.init(ApplicationManager.java:26)
-	at ru.stqa.pft.addressbook.tests.TestBase.setUp(TestBase.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:803)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:589)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.runSuites(TestNG.java:1092)
-	at org.testng.TestNG.run(TestNG.java:1060)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:135)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:831)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -167,21 +78,38 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 </tr>
 </thead>
 <tr>
-<td class="failures">setUp</td>
-<td class="failures">1.071s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="skipped">testGroupCreation</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="success">testGroupCreation</td>
+<td class="success">1.173s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>1658683809753	geckodriver	INFO	Listening on 127.0.0.1:62572
+<pre>1658686123496	geckodriver	INFO	Listening on 127.0.0.1:53562
+1658686123792	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Firefox Developer Edition\\firefox.exe&quot; &quot;--marionette&quot; &quot;--remote-debugging-port&quot; &quot;50025&quot; &quot;--remote-allow-hosts&quot; &quot;localhost&quot; &quot;--remote-allow-origins&quot; &quot;http://localhost:50025/&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofile20cS6J&quot;
+1658686124117	Marionette	INFO	Marionette enabled
+1658686124122	Marionette	INFO	Listening on port 51320
+Read port: 51320
+WebDriver BiDi listening on ws://localhost:50025
+1658686124242	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: &quot;get: No settings file exists, new profile?&quot; (new NotFoundError(&quot;Could not open the file at C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofile20cS6J\\search.json.mozlz4&quot;, (void 0)))
+DevTools listening on ws://localhost:50025/devtools/browser/a201710f-245a-4460-862b-4f625416d77a
+Jul 24, 2022 9:08:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property &quot;getRecipesForHost&quot;, gRecipeManager is null
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property &quot;getRecipesForHost&quot;, gRecipeManager is null
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property &quot;getRecipesForHost&quot;, gRecipeManager is null
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property &quot;getRecipesForHost&quot;, gRecipeManager is null
+console.warn: LoginRecipes: &quot;getRecipes: falling back to a synchronous message for:&quot; &quot;http://localhost&quot;
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property &quot;getRecipesForHost&quot;, gRecipeManager is null
+1658686127796	Marionette	INFO	Stopped listening on port 51320
 </pre>
 </span>
 </div>
@@ -193,7 +121,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.0.1</a> at Jul 24, 2022, 8:30:10 PM</p>
+<a href="http://www.gradle.org">Gradle 7.0.1</a> at Jul 24, 2022, 9:08:48 PM</p>
 </div>
 </div>
 </body>
