@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-24T18:08:46" hostname="T15" time="1.173">
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-25T07:11:02" hostname="T15" time="1.132">
   <properties/>
-  <testcase name="testGroupCreation" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.173"/>
+  <testcase name="testGroupCreation" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.132"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1658686123496	geckodriver	INFO	Listening on 127.0.0.1:53562
-1658686123792	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "50025" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://localhost:50025/" "-no-remote" "-profile" "C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofile20cS6J"
-1658686124117	Marionette	INFO	Marionette enabled
-1658686124122	Marionette	INFO	Listening on port 51320
-Read port: 51320
-WebDriver BiDi listening on ws://localhost:50025
-1658686124242	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofile20cS6J\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:50025/devtools/browser/a201710f-245a-4460-862b-4f625416d77a
-Jul 24, 2022 9:08:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+  <system-err><![CDATA[1658733058825	geckodriver	INFO	Listening on 127.0.0.1:54711
+1658733059140	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "62982" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://localhost:62982/" "-no-remote" "-profile" "C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofileD5117W"
+1658733059532	Marionette	INFO	Marionette enabled
+1658733059538	Marionette	INFO	Listening on port 53219
+WebDriver BiDi listening on ws://localhost:62982
+Read port: 53219
+1658733059675	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Pasha\\AppData\\Local\\Temp\\rust_mozprofileD5117W\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62982/devtools/browser/6c69255a-1ae9-4493-802c-28d84ac3cce4
+Jul 25, 2022 10:11:01 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
@@ -25,6 +25,6 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property "getRecipesForHost", gRecipeManager is null
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: can't access property "getRecipesForHost", gRecipeManager is null
-1658686127796	Marionette	INFO	Stopped listening on port 51320
+1658733063420	Marionette	INFO	Stopped listening on port 53219
 ]]></system-err>
 </testsuite>
