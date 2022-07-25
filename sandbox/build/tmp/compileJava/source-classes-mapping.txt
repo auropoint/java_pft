@@ -4,3 +4,5 @@ ru/stqa/pft/sandbox/Rectangle.java
  ru.stqa.pft.sandbox.Rectangle
 ru/stqa/pft/sandbox/MyFirstProgram.java
  ru.stqa.pft.sandbox.MyFirstProgram
+ru/stqa/pft/sandbox/Equation.java
+ ru.stqa.pft.sandbox.Equation
