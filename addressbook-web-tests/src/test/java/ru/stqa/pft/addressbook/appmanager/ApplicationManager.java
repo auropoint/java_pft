@@ -7,6 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class ApplicationManager {
 
@@ -21,11 +22,11 @@ public class ApplicationManager {
   }
 
   public void init() {
-      if (browser == "FIREFOX") {
+      if (Objects.equals(browser, "FIREFOX")) {
       wd = new FirefoxDriver();
-    } else if (browser == "CHROME") {
+    } else if (Objects.equals(browser, "CHROME")) {
       wd = new ChromeDriver();
-    } else if (browser == "IE") {
+    } else if (Objects.equals(browser, "IE")) {
       wd = new InternetExplorerDriver();
     }
 
