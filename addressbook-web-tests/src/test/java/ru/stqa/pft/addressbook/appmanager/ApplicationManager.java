@@ -15,6 +15,7 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
+  private ContactHelper contactHelper;
   private String browser;
 
   public ApplicationManager(String browser) {
@@ -32,10 +33,11 @@ public class ApplicationManager {
 
     new WebDriverWait(wd, Duration.ofSeconds(60));
     wd.get("http://localhost/addressbook/group.php");
-    groupHelper = new GroupHelper(wd);
-    navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
+    navigationHelper = new NavigationHelper(wd);
+    groupHelper = new GroupHelper(wd);
+    contactHelper = new ContactHelper(wd);
   }
 
   public void stop() {
@@ -50,4 +52,6 @@ public class ApplicationManager {
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
+
+  public ContactHelper getContactHelper() {return contactHelper;}
 }
