@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Objects;
@@ -22,8 +21,10 @@ public class ApplicationManager {
     this.browser = browser;
   }
 
+
   public void init() {
-      if (Objects.equals(browser, "FIREFOX")) {
+
+    if (Objects.equals(browser, "FIREFOX")) {
       wd = new FirefoxDriver();
     } else if (Objects.equals(browser, "CHROME")) {
       wd = new ChromeDriver();
@@ -31,7 +32,8 @@ public class ApplicationManager {
       wd = new InternetExplorerDriver();
     }
 
-    new WebDriverWait(wd, Duration.ofSeconds(60));
+
+    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wd.get("http://localhost/addressbook/group.php");
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
@@ -53,5 +55,7 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public ContactHelper getContactHelper() {return contactHelper;}
+  public ContactHelper getContactHelper() {
+    return contactHelper;
+  }
 }
