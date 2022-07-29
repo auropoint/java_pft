@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
+import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
+
 public class ContactData {
 
   private final String firstname;
