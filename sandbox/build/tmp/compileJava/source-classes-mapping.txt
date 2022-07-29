@@ -8,3 +8,5 @@ ru/stqa/pft/sandbox/Equation.java
  ru.stqa.pft.sandbox.Equation
 ru/stqa/pft/sandbox/Equality.java
  ru.stqa.pft.sandbox.Equality
+ru/stqa/pft/sandbox/Primes.java
+ ru.stqa.pft.sandbox.Primes

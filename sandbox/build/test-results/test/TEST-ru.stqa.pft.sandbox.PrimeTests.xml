@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.sandbox.PrimeTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-07-29T08:21:52" hostname="T15" time="5.399">
+  <properties/>
+  <testcase name="testPrimeFor" classname="ru.stqa.pft.sandbox.PrimeTests" time="5.39"/>
+  <testcase name="testPrimeForNot" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeForShort" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeForShortNot" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeForSqrt" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeWhile" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeWhileNot" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeWhileShort" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <testcase name="testPrimeWhileShortNot" classname="ru.stqa.pft.sandbox.PrimeTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
