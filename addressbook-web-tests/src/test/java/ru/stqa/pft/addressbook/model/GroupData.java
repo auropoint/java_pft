@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class GroupData {
 
-  public final String id;
+  public int id;
   public final String name;
   public final String header;
   public final String footer;
 
-  public GroupData(String id, String name, String header, String footer) {
+  public GroupData(int id, String name, String header, String footer) {
     this.id = id;
     this.name = name;
     this.header = header;
@@ -17,15 +17,18 @@ public class GroupData {
   }
 
   public GroupData(String name, String header, String footer) {
-    this.id = null;
+    this.id = 0;
     this.name = name;
     this.header = header;
     this.footer = footer;
   }
 
-
-  public String getId() {
+  public int getId() {
     return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getName() {
@@ -41,11 +44,19 @@ public class GroupData {
   }
 
   @Override
+  public String toString() {
+    return "GroupData{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            '}';
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     GroupData groupData = (GroupData) o;
-    return Objects.equals(id, groupData.id) && Objects.equals(name, groupData.name);
+    return id == groupData.id && Objects.equals(name, groupData.name);
   }
 
   @Override
@@ -53,12 +64,6 @@ public class GroupData {
     return Objects.hash(id, name);
   }
 
-  @Override
-  public String toString() {
-    return "GroupData{" +
-            "id='" + id + '\'' +
-            ", name='" + name + '\'' +
-            '}';
-  }
+
 
 }
