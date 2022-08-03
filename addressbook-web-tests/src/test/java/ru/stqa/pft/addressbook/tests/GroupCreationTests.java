@@ -4,9 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
-
 import java.util.Comparator;
-import java.util.List;
+import java.util.Set;
 
 public class GroupCreationTests extends TestBase {
 
@@ -17,49 +16,13 @@ public class GroupCreationTests extends TestBase {
 
   @Test
   public void testGroupCreation() {
-    List<GroupData> before = app.group().list();
+    Set<GroupData> before = app.group().all();
     GroupData group = new GroupData().withName("test8");
     app.group().create(group);
-    List<GroupData> after = app.group().list();
+    Set<GroupData> after = app.group().all();
     Assert.assertEquals(after.size(), before.size() + 1);
-
-
-    //Нахождение максимального айди группы
-
-    // 1) путём перебора циклом
-//    int max = 0;
-//    for (GroupData g : after) {
-//      if (g.getId() > max) {
-//        max = g.getId();
-//      }
-//    }
-
-
-    //путём возможностей Java 8, используя старые средства (анонимный класс)
-//    Comparator<? super GroupData> byId = new Comparator<GroupData>() {
-//      @Override
-//      public int compare(GroupData o1, GroupData o2) {
-//        return Integer.compare(o1.getId(), o2.getId());
-//      }
-//    };
-//
-//    int max = after.stream().max(byId).get().getId();
-
-
-    //путём возможностей Java 8, используя лямбда-выражения (анонимные функции)
-
-//    Comparator<? super GroupData> byId =
-//            (Comparator<GroupData>) (o1, o2) -> Integer.compare(o1.getId(), o2.getId());
-
-//    // вычисление айди созданной группы и его присвоение
-//    int max = after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId();
-//    group.setId(max);
-
-
+    group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
     before.add(group);
-    Comparator<? super GroupData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
-    before.sort(byId);
-    after.sort(byId);
     Assert.assertEquals(before, after);
   }
 
