@@ -13,6 +13,8 @@ import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
+  private Groups groupCash = null;
+
   public GroupHelper(WebDriver wd) {
     super(wd);
   }
@@ -24,8 +26,6 @@ public class GroupHelper extends HelperBase {
   public void submitGroupCreation() {
     click(By.name("submit"));
   }
-
-  private Groups groupCash = null;
 
   public void fillGroupForm(GroupData groupData) {
     type(By.name("group_name"), groupData.getName());

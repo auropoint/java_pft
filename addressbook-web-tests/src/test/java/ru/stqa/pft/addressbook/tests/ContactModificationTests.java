@@ -9,16 +9,16 @@ public class ContactModificationTests extends TestBase {
   public void testContactModification() {
     app.goTo().gotoHomePage();
 
-    if (!app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData("test_name",
-              "test_surname", "test1"));
+    if (!app.contact().isThereAContact()) {
+      app.contact().create(new ContactData().withFirstname("test_name")
+              .withLastname("test_surname").withGroup("test1"));
     }
     app.goTo().gotoHomePage();
 
-    app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("test_name",
-            "test_surname", null), false);
-    app.getContactHelper().submitContactModification();
+    app.contact().initContactModification();
+    app.contact().fillContactForm(new ContactData().withFirstname("test_name")
+            .withLastname("test_surname").withGroup(null), false);
+    app.contact().submitContactModification();
     app.goTo().gotoHomePage();
 
   }
