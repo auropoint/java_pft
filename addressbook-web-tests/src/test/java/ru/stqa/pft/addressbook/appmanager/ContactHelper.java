@@ -66,10 +66,11 @@ public class ContactHelper extends HelperBase {
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement k : elements) {
       int id = Integer.parseInt(k.findElement(By.tagName("input")).getAttribute("value"));
-      String firstname = k.findElement(By.xpath("//td[3]")).getText();
-      String lastname = k.findElement(By.xpath("//td[2]")).getText();
+      String firstname = k.findElement(By.xpath(".//td[3]")).getText();
+      String lastname = k.findElement(By.xpath(".//td[2]")).getText();
+      String[] phones = k.findElement(By.xpath(".//td[6]")).getText().split("\n");
       contactCash.add(new ContactData().withId(id).withFirstname(firstname)
-              .withLastname(lastname));
+              .withLastname(lastname).withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
     }
     return new Contacts(contactCash);
   }
@@ -100,4 +101,8 @@ public class ContactHelper extends HelperBase {
 //    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
 
   }
+
+
+
+
 }

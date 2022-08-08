@@ -28,6 +28,20 @@ public class ContactData {
     return group;
   }
 
+
+  public String getHomePhone() {
+    return home;
+  }
+
+  public String getMobilePhone() {
+    return mobile;
+  }
+
+  public String getWorkPhone() {
+    return work;
+  }
+
+
   public ContactData withId(int id) {
     this.id = id;
     return this;
