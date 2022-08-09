@@ -69,8 +69,10 @@ public class ContactHelper extends HelperBase {
       String firstname = k.findElement(By.xpath(".//td[3]")).getText();
       String lastname = k.findElement(By.xpath(".//td[2]")).getText();
       String[] phones = k.findElement(By.xpath(".//td[6]")).getText().split("\n");
+      String allPhones = k.findElement(By.xpath(".//td[6]")).getText();
       contactCash.add(new ContactData().withId(id).withFirstname(firstname)
-              .withLastname(lastname).withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+              .withLastname(lastname).withHomePhone(phones[0]).withMobilePhone(phones[1])
+              .withWorkPhone(phones[2]).withAllPhones(allPhones));
     }
     return new Contacts(contactCash);
   }
