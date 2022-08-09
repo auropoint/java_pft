@@ -2,6 +2,8 @@ package ru.stqa.pft.addressbook.model;
 
 import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
 
+import java.io.File;
+
 public class ContactData {
 
   public int id = Integer.MAX_VALUE;
@@ -12,6 +14,8 @@ public class ContactData {
   private String mobile;
   private String work;
   private String allPhones;
+  private File photo;
+
 
   public int getId() {
     return id;
@@ -45,6 +49,11 @@ public class ContactData {
   public String getAllPhones() {
     return allPhones;
   }
+
+  public File getPhoto() {
+    return photo;
+  }
+
 
 
   public ContactData withId(int id) {
@@ -87,5 +96,9 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
 
 }
