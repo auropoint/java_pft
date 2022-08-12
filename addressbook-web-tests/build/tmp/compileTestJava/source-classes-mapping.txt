@@ -20,8 +20,8 @@ ru/stqa/pft/addressbook/model/GroupData.java
  ru.stqa.pft.addressbook.model.GroupData
 ru/stqa/pft/addressbook/tests/GroupDeletionTests.java
  ru.stqa.pft.addressbook.tests.GroupDeletionTests
-ru/stqa/pft/addressbook/generators/GroupDataGenerator.java
- ru.stqa.pft.addressbook.generators.GroupDataGenerator
+ru/stqa/pft/addressbook/tests/ContactModificationTests.java
+ ru.stqa.pft.addressbook.tests.ContactModificationTests
 ru/stqa/pft/addressbook/model/Groups.java
  ru.stqa.pft.addressbook.model.Groups
 ru/stqa/pft/addressbook/tests/ContactCreationTests.java
@@ -30,8 +30,8 @@ ru/stqa/pft/addressbook/appmanager/ApplicationManager.java
  ru.stqa.pft.addressbook.appmanager.ApplicationManager
 ru/stqa/pft/addressbook/tests/ContactPhoneTests.java
  ru.stqa.pft.addressbook.tests.ContactPhoneTests
-ru/stqa/pft/addressbook/tests/ContactModificationTests.java
- ru.stqa.pft.addressbook.tests.ContactModificationTests
+ru/stqa/pft/addressbook/generators/GroupDataGenerator.java
+ ru.stqa.pft.addressbook.generators.GroupDataGenerator
 ru/stqa/pft/addressbook/tests/GroupCreationTests.java
  ru.stqa.pft.addressbook.tests.GroupCreationTests
  ru.stqa.pft.addressbook.tests.GroupCreationTests$1
