@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -36,7 +38,7 @@ public class GroupCreationTests extends TestBase {
 
 
   @DataProvider
-  public Iterator<Object[]> validGroups() throws IOException {
+  public Iterator<Object[]> validGroupsFromXml() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/groups.xml"));
     String xml = "";
     String line = reader.readLine();
@@ -47,33 +49,27 @@ public class GroupCreationTests extends TestBase {
     XStream xstream = new XStream();
     xstream.processAnnotations(GroupData.class);
     List<GroupData> groups = (List<GroupData>) xstream.fromXML(xml);
-    return groups.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+    return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
+
 
   @DataProvider
-  public Iterator<Object[]> validGroupsExpanded() throws IOException {
-    BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/groups.xml"));
-    String xml = "";
+  public Iterator<Object[]> validGroupsFromJson() throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/groups.json"));
+    String json = "";
     String line = reader.readLine();
     while (line != null) {
-      xml += line;
+      json += line;
       line = reader.readLine();
     }
-    XStream xstream = new XStream();
-    xstream.processAnnotations(GroupData.class);
-    Object res = xstream.fromXML(xml);
-    List<GroupData> groups = (List<GroupData>) res;
-    List <Object[]> list;
-    Stream<Object[]> groupsArray = groups.stream().map((g) -> new Object[]{g});
-    list = groupsArray.collect(Collectors.toList());
-        return list.iterator();
+    Gson gson = new Gson();
+    List<GroupData> groups = gson.fromJson(json, new TypeToken<List<GroupData>>() {}.getType());
+    return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
 
-
-
-  @Test(dataProvider = "validGroups")
-  public void testGroupCreationXml(GroupData group) {
+  @Test(dataProvider = "validGroupsFromJson")
+  public void testGroupCreation(GroupData group) {
     Groups before = app.group().all();
     app.group().create(group);
     assertThat(app.group().count(), equalTo(before.size() + 1));
