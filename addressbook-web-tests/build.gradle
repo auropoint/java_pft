@@ -4,6 +4,9 @@ repositories {
     mavenCentral()
 }
 
+
+
+
 dependencies {
     implementation 'org.testng:testng:7.6.1'
 
@@ -23,14 +26,35 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.1'
 
 
-
 }
 
+
+
+
+
+test {
+    useTestNG() {
+    }
+    //    systemProperty "browser", System.getProperty("browser")
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+}
 
 
 task testGroups(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-groups.xml'
+    }
+    //    systemProperty "browser", System.getProperty("browser")
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
     }
 }
 
@@ -38,4 +62,15 @@ task testContacts(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-contacts.xml'
     }
+//    systemProperty "browser", System.getProperty("browser")
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }
+
+
+
+

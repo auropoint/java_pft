@@ -13,6 +13,9 @@ public class ContactCreationTests extends TestBase {
     app.contact().create(new ContactData().withFirstname("test_name")
             .withLastname("test_surname").withGroup("test1").withPhoto(photo));
     app.goTo().gotoHomePage();
+    System.out.println("*********");
+    System.out.println(System.getProperty("browser"));
+    System.out.println("*********");
 
   }
 

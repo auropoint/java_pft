@@ -1,14 +1,21 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.testng.annotations.AfterMethod;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-  protected static final ApplicationManager app = new ApplicationManager("CHROME");
+//  protected static final ApplicationManager app
+//          = new ApplicationManager(Browser.FIREFOX);
+
+//  protected static final ApplicationManager app
+//          = new ApplicationManager(System.getProperty("browser", "chrome"));
+
+  protected static final ApplicationManager app
+          = new ApplicationManager(System.getProperty("browser", "chrome"));
 
   @BeforeSuite
   public void setUp() throws Exception {
