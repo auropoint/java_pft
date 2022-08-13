@@ -9,18 +9,18 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GroupCreationTests extends TestBase {
-
 
   @BeforeMethod
   private void ensurePreconditions() {
@@ -80,6 +80,7 @@ public class GroupCreationTests extends TestBase {
     group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
     assertThat(after, equalTo(before.withAdded(group)));
   }
+
 
   @Test
   public void testBadGroupCreation() {
