@@ -1,21 +1,46 @@
 package ru.stqa.pft.addressbook.model;
 
+import org.hibernate.annotations.Type;
 import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
 
+import javax.persistence.*;
 import java.io.File;
 
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
-
+  @Id
+  @Column(name = "id")
   public int id = Integer.MAX_VALUE;
+  @Column(name = "firstname")
   private String firstname;
+  @Column(name = "lastname")
   private String lastname;
-  private String group;
+  @Transient
+   private String group;
+  @Column(name = "home")
+  @Type(type = "text")
   private String home;
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobile;
+  @Column(name = "work")
+  @Type(type = "text")
   private String work;
+  @Transient
   private String allPhones;
-  private File photo;
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
 
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
 
   public int getId() {
     return id;
@@ -51,9 +76,8 @@ public class ContactData {
   }
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
-
 
 
   public ContactData withId(int id) {
@@ -97,7 +121,7 @@ public class ContactData {
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
