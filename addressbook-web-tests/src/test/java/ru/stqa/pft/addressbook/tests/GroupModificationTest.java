@@ -11,23 +11,24 @@ import static org.testng.Assert.assertEquals;
 
 public class GroupModificationTest extends TestBase {
 
-@BeforeMethod
+  @BeforeMethod
   private void ensurePreconditions() {
-    app.goTo().groupPage();
-  if (app.group().count() == 0) {
+    if (app.db().groups().size() == 0) {
+      app.goTo().groupPage();
       app.group().create(new GroupData().withName("test8"));
     }
+    app.goTo().groupPage();
   }
 
   @Test
   public void testGroupModification() {
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     GroupData modifiedGroup = before.iterator().next();
     GroupData group = new GroupData().withId(modifiedGroup.getId())
             .withName("test1").withHeader("test2").withFooter("test3");
     app.group().modify(group);
     assertEquals(app.group().count(), before.size());
-    Groups after = app.group().all();
+    Groups after = app.db().groups();
     assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
   }
 
