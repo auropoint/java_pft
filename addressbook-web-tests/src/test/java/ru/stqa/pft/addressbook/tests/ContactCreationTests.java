@@ -10,8 +10,14 @@ public class ContactCreationTests extends TestBase {
   @Test
   public void testContactCreation() {
     File photo = new File("src/test/resources/stru.png");
-    app.contact().create(new ContactData().withFirstname("test_name")
-            .withLastname("test_surname").withGroup("test1").withPhoto(photo));
+    app.contact().create(new ContactData()
+            .withFirstname("test_name")
+            .withLastname("test_surname")
+            .withHomePhone("+567 (567) 00-01")
+            .withMobilePhone("+567 (567) 00-02")
+            .withWorkPhone("+567 (567) 00-03")
+            .withGroup("test1")
+            .withPhoto(photo));
     app.goTo().gotoHomePage();
     verifyContactListInUi();
   }

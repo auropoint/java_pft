@@ -27,6 +27,9 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
+    type(By.name("home"), contactData.getHomePhone());
+    type(By.name("mobile"), contactData.getMobilePhone());
+    type(By.name("work"), contactData.getWorkPhone());
     attach(By.name("photo"), contactData.getPhoto());
 
     if (creation) {
@@ -47,6 +50,7 @@ public class ContactHelper extends HelperBase {
 
   public void submitContactModification() {
     click(By.name("update"));
+    contactCash = null;
   }
 
   public boolean isThereAContact() {
@@ -57,6 +61,7 @@ public class ContactHelper extends HelperBase {
     initContactCreation();
     fillContactForm(contactData, true);
     submitContactCreation();
+    contactCash = null;
   }
 
   public Contacts all() {
@@ -71,9 +76,14 @@ public class ContactHelper extends HelperBase {
       String lastname = k.findElement(By.xpath(".//td[2]")).getText();
       String[] phones = k.findElement(By.xpath(".//td[6]")).getText().split("\n");
       String allPhones = k.findElement(By.xpath(".//td[6]")).getText();
-      contactCash.add(new ContactData().withId(id).withFirstname(firstname)
-              .withLastname(lastname).withHomePhone(phones[0]).withMobilePhone(phones[1])
-              .withWorkPhone(phones[2]).withAllPhones(allPhones));
+      contactCash.add(new ContactData()
+              .withId(id)
+              .withFirstname(firstname)
+              .withLastname(lastname)
+              .withHomePhone(phones[0])
+              .withMobilePhone(phones[1])
+              .withWorkPhone(phones[2])
+              .withAllPhones(allPhones));
     }
     return new Contacts(contactCash);
   }

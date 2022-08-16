@@ -47,7 +47,7 @@ public class TestBase {
 
   public void verifyGroupListInUi() {
     if (Boolean.getBoolean("verifyUi")) {
-      logger.info("UI verification is ON");
+      logger.info("UI verification is ON and started");
       Groups dbGroups = app.db().groups();
       Groups uiGroups = app.group().all();
       assertThat(uiGroups, equalTo(dbGroups.stream()
@@ -55,17 +55,19 @@ public class TestBase {
                       .withId(g.getId())
                       .withName(g.getName()))
               .collect(Collectors.toSet())));
-      logger.info("UI verification is done");
+      logger.info("UI verification is successfully DONE");
+      return;
     }
     logger.info("UI verification is OFF");
   }
 
   public void verifyContactListInUi() {
     if (Boolean.getBoolean("verifyUi")) {
-      logger.info("UI verification is ON");
+      logger.info("UI verification is ON and started");
       Contacts dbContacts = app.db().contacts();
       Contacts uiContacts = app.contact().all();
-      assertThat(uiContacts, equalTo(dbContacts.stream()
+      assertThat(uiContacts, equalTo(dbContacts
+              .stream()
               .map((g) -> new ContactData()
                       .withId(g.getId())
                       .withFirstname(g.getFirstname())
@@ -74,7 +76,7 @@ public class TestBase {
                       .withMobilePhone(g.getMobilePhone())
                       .withWorkPhone(g.getWorkPhone()))
               .collect(Collectors.toSet())));
-      logger.info("UI verification is done");
+      logger.info("UI verification is successfully DONE");
     }
     logger.info("UI verification is OFF");
   }
