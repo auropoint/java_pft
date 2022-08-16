@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
@@ -17,18 +18,14 @@ public class HbConnectionTest {
   private SessionFactory sessionFactory;
 
   @BeforeClass
-    protected void setUp() throws Exception {
-    // A SessionFactory is set up once for an application!
-    final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-            .configure() // configures settings from hibernate.cfg.xml
-            .build();
+  protected void setUp() {
+    Configuration cfg1 = new Configuration();
+    cfg1.configure("hibernateAddressbook.cfg.xml");
+
     try {
-      sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+      sessionFactory = cfg1.buildSessionFactory();
     } catch (Exception e) {
       e.printStackTrace();
-      // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
-      // so destroy it manually.
-      StandardServiceRegistryBuilder.destroy(registry);
     }
   }
 
@@ -46,7 +43,7 @@ public class HbConnectionTest {
   }
 
 
-    @Test
+  @Test
   public void testHbConnectionContacts() {
 
     Session session = sessionFactory.openSession();
@@ -58,7 +55,6 @@ public class HbConnectionTest {
     session.getTransaction().commit();
     session.close();
   }
-
 
 
 }

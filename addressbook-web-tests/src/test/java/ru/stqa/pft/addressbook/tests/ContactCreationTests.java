@@ -13,19 +13,13 @@ public class ContactCreationTests extends TestBase {
     app.contact().create(new ContactData().withFirstname("test_name")
             .withLastname("test_surname").withGroup("test1").withPhoto(photo));
     app.goTo().gotoHomePage();
-    System.out.println("*********");
-    System.out.println(System.getProperty("browser"));
-    System.out.println("*********");
-
+    verifyContactListInUi();
   }
 
-  @Test
-          (enabled = false)
+  @Test (enabled = true)
   public void testCurrentDir() {
     File currentDir = new File(".");
-    System.out.println("***");
-    System.out.println(currentDir.getAbsolutePath());
-    System.out.println("***");
+    System.out.println("**********   " + currentDir.getAbsolutePath() + "   **********");
     File photo = new File("src/test/resources/stru.png");
     System.out.println(photo.getAbsolutePath());
     System.out.println(photo.exists());
