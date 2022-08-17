@@ -5,31 +5,37 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("group")
 @Entity
 @Table(name = "group_list")
 public class GroupData {
+
   @XStreamOmitField
   @Id
   @Column(name = "group_id")
   public int id = Integer.MAX_VALUE;
+
   @Expose
   @Column(name = "group_name")
   public String name;
+
   @Expose
   @Column(name = "group_header")
   @Type(type = "text")
   public String header;
+
   @Expose
   @Column(name = "group_footer")
   @Type(type = "text")
   public String footer;
+
+  @ManyToMany (mappedBy = "groups")
+  private Set<ContactData> contacts = new HashSet<>();
 
   public int getId() {
     return id;
@@ -46,6 +52,11 @@ public class GroupData {
   public String getFooter() {
     return footer;
   }
+
+  public Contacts getContacts() {
+    return new Contacts(contacts);
+  }
+
 
 
   public GroupData withId(int id) {
