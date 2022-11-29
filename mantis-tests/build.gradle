@@ -1,0 +1,44 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.testng:testng:7.6.1'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.2.2'
+
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest //проверялка
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.1'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+
+
+}
+
+
+test {
+    useTestNG {
+        suites 'src/test/resources/testng.xml'
+    }
+    //    systemProperty "browser", System.getProperty("browser")
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUi')) {
+        systemProperty 'verifyUi', "${verifyUi}"
+    }
+}
+
+
+
+
+
+
